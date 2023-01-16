@@ -28,22 +28,22 @@ $(function () {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-  var hour = dayjs()
+  // var hour = dayjs()
 
-  if (hour === 9) {
-    var div9 = document.querySelector("hour-9")
-    div9.classList.add("present")
-    div9.classList.remove("past")
-    div9.classList.remove("future")
-  } else {
-    if (hour === 10)
-      var div10 = document.querySelector("hour-10")
-    div10.classList.add("present")
-    div10.classList.remove("past")
-    div10.classList.remove("future")
-    div9.classList.add("past")
-    div9.classList.remove("present")
-  }
+  // if (hour === 9) {
+  //   var div9 = document.querySelector("hour-9")
+  //   div9.classList.add("present")
+  //   div9.classList.remove("past")
+  //   div9.classList.remove("future")
+  // } else {
+  //   if (hour === 10)
+  //     var div10 = document.querySelector("hour-10")
+  //   div10.classList.add("present")
+  //   div10.classList.remove("past")
+  //   div10.classList.remove("future")
+  //   div9.classList.add("past")
+  //   div9.classList.remove("present")
+  // }
   // }
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
@@ -57,9 +57,12 @@ $(function () {
 // var nineAM = localStorage.getItem("9am")
 // var nineAM = document.querySelector("#9am").value
 // localStorage.setItem("hour-9", nineAM)
-var userInput = document.getElementById("nineText");
-var inputVal = userInput.value;
 
-$("#nineBtn").on("click", function () {
-  localStorage.setItem("hour-9", "inputVal");
+
+$(".saveBtn").on("click", function () {
+  var userInput = document.getElementById("nineText");
+  var inputVal = userInput.value;
+  localStorage.setItem("hour-9", inputVal);
+  var stored = Document.querySelector(".nineStorage")
+  stored.textContent = localStorage.getItem("hour-9")
 })
