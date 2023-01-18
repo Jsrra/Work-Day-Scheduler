@@ -59,12 +59,9 @@ textarea {
 }
 
 .hide {
-  visibility: hidden;
+  display: none;
 }
 
-.show {
-  visibility: visible;
-}
 
 #notify {
   text-align: center;
